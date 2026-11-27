@@ -19,7 +19,9 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 SRC = "hlr_pdf_catalog.jsonl"
 MANIFEST = "hlr_download_manifest.jsonl"
-TARGET_DIR = r"C:\Users\张庆霖\Downloads\Harvard Law Review PDFs"
+# 输出目录：可用环境变量 PDF_TARGET_DIR 覆盖，默认落到 ~/Downloads/Harvard Law Review PDFs
+TARGET_DIR = os.environ.get("PDF_TARGET_DIR") or os.path.join(
+    os.path.expanduser("~"), "Downloads", "Harvard Law Review PDFs")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 HEADERS = {"User-Agent": UA,

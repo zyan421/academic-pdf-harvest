@@ -45,6 +45,12 @@ git clone https://github.com/zyan421/academic-pdf-harvest.git `
   "$env:USERPROFILE\.workbuddy\skills\academic-pdf-harvest"
 ```
 
+> 本仓库是 **public**，克隆不需要任何认证。
+> 若克隆时被要求输入用户名密码、或在非交互环境中长时间无输出挂起，几乎一定是
+> 仓库不可见（私有或名字写错）——GitHub 对「不存在」和「无权限」都会回 401，
+> 而 git 收到 401 就转交互式认证，非交互环境下就表现为卡住。
+> 快速自检：`GIT_TERMINAL_PROMPT=0 git ls-remote <仓库地址>`，能立刻失败而不是挂起。
+
 ## 最小可用命令（Digital Commons）
 
 ```powershell

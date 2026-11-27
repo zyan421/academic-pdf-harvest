@@ -37,7 +37,7 @@ description: 把学术期刊或网站上的文献，做成全量 PDF 链接清�
 标准调用（**先 `--preflight`，再正式跑**）；下面按 PowerShell 写，bash 里把 `& $PY` 换成 `$PY`：
 
 ```powershell
-$PY = "C:\Users\张庆霖\.workbuddy\binaries\python\envs\default\Scripts\python.exe"
+$PY = "$env:USERPROFILE\.workbuddy\binaries\python\envs\default\Scripts\python.exe"
 # 体检：缺链、同题冲突、路径超长、涉及几个站点
 & $PY dc_download.py --journals Chicago,Duke --preflight
 # 下载：每站 1 线程、每请求 8 秒
